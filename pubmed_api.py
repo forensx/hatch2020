@@ -48,7 +48,10 @@ def pubmed(query, number):
         try:
             title = article['MedlineCitation']['Article']['ArticleTitle']['#text']
         except:
-            title = article['MedlineCitation']['Article']['ArticleTitle']
+            try:
+                title = article['MedlineCitation']['Article']['ArticleTitle']
+            except:
+                title = "No title available"
         title = title.strip("[].")
         # getting the journal title
         journal = article['MedlineCitation']['Article']['Journal']['Title']

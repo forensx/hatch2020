@@ -140,7 +140,7 @@ class e(Resource):
             except:
                 yearsPassed = 1000
             ppindex = PP_Index(gdc, gfc, yearsPassed)
-            ppindex_all.append(ppindex)
+            ppindex_all.append(ppindex + 0.0001)
             
         norm_ppindex = [x/mean(ppindex_all) for x in ppindex_all]
         #  \ return results of search here
